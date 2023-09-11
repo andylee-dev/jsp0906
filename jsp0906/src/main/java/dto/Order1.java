@@ -6,6 +6,7 @@ public class Order1 {
 	private String order_desc;
 	private int sabun;
 	private String order_status;
+
 	public String getOrder_date() {
 		return order_date;
 	}

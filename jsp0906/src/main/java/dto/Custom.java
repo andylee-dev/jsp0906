@@ -1,22 +1,22 @@
 package dto;
 
 public class Custom {
-	private int custcode;
-	private String custname;
+	private int cust_code;
+	private String cust_name;
 	private String cust_tel;
 	private String cust_gubun;
 	private String cust_ceo;
-	public int getCustcode() {
-		return custcode;
+	public int getCust_code() {
+		return cust_code;
 	}
-	public void setCustcode(int custcode) {
-		this.custcode = custcode;
+	public void setCust_code(int cust_code) {
+		this.cust_code = cust_code;
 	}
-	public String getCustname() {
-		return custname;
+	public String getCust_name() {
+		return cust_name;
 	}
-	public void setCustname(String custname) {
-		this.custname = custname;
+	public void setCust_name(String cust_name) {
+		this.cust_name = cust_name;
 	}
 	public String getCust_tel() {
 		return cust_tel;
@@ -36,4 +36,5 @@ public class Custom {
 	public void setCust_ceo(String cust_ceo) {
 		this.cust_ceo = cust_ceo;
 	}
+	
 }
