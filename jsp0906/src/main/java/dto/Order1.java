@@ -1,6 +1,6 @@
 package dto;
 
-public class Order {
+public class Order1 {
 	private String order_date;
 	private int cust_code;
 	private String order_desc;

@@ -7,6 +7,9 @@ public class Item {
 	private String 	item_name;
 	private int 	item_price;
 	private String 	item_kind;
+	private String 	item_desc;
+	private Date	item_birth;	
+	
 	public int getItem_code() {
 		return item_code;
 	}
@@ -43,6 +46,5 @@ public class Item {
 	public void setItem_birth(Date item_birth) {
 		this.item_birth = item_birth;
 	}
-	private String 	item_desc;
-	private Date	item_birth;
+
 }

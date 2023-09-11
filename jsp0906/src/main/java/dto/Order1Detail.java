@@ -1,11 +1,12 @@
 package dto;
 
-public class OrderDetail {
+public class Order1Detail {
 	private String order_date;
 	private int cust_code;
 	private int item_code;
 	private String item_order_desc;
 	private String cancel;
+
 	public String getOrder_date() {
 		return order_date;
 	}
