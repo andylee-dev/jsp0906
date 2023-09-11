@@ -2,7 +2,7 @@ package dto;
 
 public class Sawon {
 	private int sabun;
-	private String sawon_name;
+	private String name;
 	private int sal;
 	private String handphone;
 	public int getSabun() {
@@ -11,11 +11,12 @@ public class Sawon {
 	public void setSabun(int sabun) {
 		this.sabun = sabun;
 	}
-	public String getSawon_name() {
-		return sawon_name;
+
+	public String getName() {
+		return name;
 	}
-	public void setSawon_name(String sawon_name) {
-		this.sawon_name = sawon_name;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getSal() {
 		return sal;
