@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+
+#sawonTable {
+	text-align: center;
+}
+
+
+#sawonList, #sawonInsert, #sawonContent, #sawonUpdate{
+  padding-top: 50px;
+}
+
+th{
+	background-color: #C3DDFA;
+}
+
+/* Navbar */
+#main_menu nav{
+  background: #C3DDFA;
+  font-weight: 500;
+}
+#main_menu nav li{
+  margin-left: 15px;
+}
+
+/* footer */
+#footer {
+	background-color: #C3DDFA;
+}
