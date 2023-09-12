@@ -19,7 +19,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="card text-center">
-					<h2 class="card-title p-3 ">사원 정보</h2>
+					<h2 class="card-title p-3 ">사원 정보 (총:${totCnt}명)</h2>
 					<div class="card-body">
 						<table id="sawonTable" class="table table-bordered table-hover">
 							<thead class="table-primary">
@@ -28,20 +28,38 @@
 								</tr>	
 							</thead>
 							<tbody>
-							<c:forEach var="sawon" items="${sawonList}">
-								<tr>
-								
-									<td>${sawon.sabun}</td>
-									<td><a href="sawonContent.do?sabun=${sawon.sabun}">
-									${sawon.name}
-									</a>
-									</td>
-									<td>${sawon.sal}</td>
-									<td>${sawon.handphone}</td>
-								</tr>
-							</c:forEach>
+							<c:if test="${totCnt > 0}">
+								<c:forEach var="sawon" items="${sawonList}">
+									<tr>
+										<td>${sawon.sabun}</td>
+										<td><a href="sawonContent.do?sabun=${sawon.sabun}">
+										${sawon.name}
+										</a>
+										</td>
+										<td>${sawon.sal}</td>
+										<td>${sawon.handphone}</td>
+									</tr>
+								<c:set var="startNum" value="${startNum - 1 }"></c:set>
+								</c:forEach>							
+							</c:if>
+
 							</tbody>
-						</table>	
+						</table>
+					  <ul class="pagination d-flex justify-content-center">
+
+						<c:if test="${startPage > blockSize }">
+						    <li class="page-item">
+						    <a class="page-link bg-primary text-white" href="sawonList.do?pageNum=${startPage-blockSize}">이전</a></li>
+						</c:if>
+						<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						    <li class="page-item">
+						    <a class="page-link" href="sawonList.do?pageNum=${i}">${i }</a></li>
+						</c:forEach>
+						<c:if test="${endPage < pageCnt }">
+						    <li class="page-item">
+						    <a class="page-link bg-primary text-white" href="sawonList.do?pageNum=${startPage + blockSize}">다음</a></li>
+						</c:if>
+					  </ul>
 					</div>
 				</div>
 			</div>

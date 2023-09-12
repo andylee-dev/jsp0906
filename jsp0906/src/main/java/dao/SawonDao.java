@@ -61,15 +61,20 @@ public class SawonDao {
 		return result;		
 	}
 
-	public List<Sawon> list() throws SQLException{
+	public List<Sawon> list(int startRow, int endRow) throws SQLException{
 		Connection conn = null;
-		String sql = "SELECT * FROM sawon";
+		String sql = "SELECT * FROM "
+				+ "(SELECT rownum rn, a.* FROM "
+					+ "(SELECT sawon.* FROM sawon ORDER BY sabun) "
+				+ "a)WHERE rn BETWEEN ? AND ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<Sawon> sawonList = null;
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,startRow);
+			pstmt.setInt(2,endRow);			
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				sawonList = new ArrayList<Sawon>();
