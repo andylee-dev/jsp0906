@@ -48,7 +48,7 @@ pageEncoding="UTF-8"%>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="itemList.do">제품조회</a></li>
-              <li><a class="dropdown-item" href="#">제품등록</a></li>
+              <li><a class="dropdown-item" href="itemInsertForm.do">제품등록</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

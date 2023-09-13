@@ -26,7 +26,7 @@ public class SawonInsertProAction implements CommandProcess {
 			SawonDao sd = SawonDao.getInstance();
 			int result = sd.insert(sawon);
 
-			request.setAttribute("sabum", sawon.getSabun());
+			request.setAttribute("sabun", sawon.getSabun());
 			request.setAttribute("result", result);
 
 			
