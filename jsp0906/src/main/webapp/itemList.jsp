@@ -26,7 +26,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <div class="container">
         <div class="row justify-content-center">
           <div class="card text-center">
-            <h2 class="card-title p-3">사원 정보 (총:${totCnt}명)</h2>
+            <h2 class="card-title p-3">제품 정보 (총:${totCnt}명)</h2>
             <div class="card-body">
               <table id="itemTable" class="table table-bordered table-hover">
                 <thead class="table-primary">

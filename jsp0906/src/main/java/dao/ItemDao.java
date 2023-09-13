@@ -157,6 +157,7 @@ public class ItemDao {
 				item.setItem_name(rs.getString("item_name"));
 				item.setItem_price(rs.getInt("item_price"));
 				item.setItem_kind(rs.getString("item_kind"));
+				item.setItem_desc(rs.getString("item_desc"));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
