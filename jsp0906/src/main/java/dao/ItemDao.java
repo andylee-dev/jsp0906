@@ -109,8 +109,8 @@ public class ItemDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql1 = "SELECT NVL(max(item_code),0) FROM item";
-		String sql = "INSERT INTO item VALUES (?, ?, ?, ?, ?)";
+		String sql1 = "SELECT SEQ_ITEM.nextval FROM dual";
+		String sql = "INSERT INTO item VALUES (?, ?, ?, ?, ?, sysdate)";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql1);
