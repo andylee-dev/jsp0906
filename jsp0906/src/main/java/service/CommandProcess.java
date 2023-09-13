@@ -11,11 +11,13 @@ public interface CommandProcess {
 							HttpServletResponse response
 							)
 							throws SerialException,IOException;
+	//System.out.println(getClass().getName()+"-requestPro Start");
+	//try {
+	//
+	//
+	//} catch (Exception e) {
+	//	System.out.println("[ERROR]"+getClass().getName()+":"+e.getMessage());
+	//} finally{
+	//	System.out.println(getClass().getName()+"-requestPro end");
+	//}
 }
-//System.out.println(getClass().getName()+"-requestPro Start");
-//try {
-//
-//
-//} catch (Exception e) {
-//	System.out.println("[ERROR]"+getClass().getName()+":"+e.getMessage());
-//}
