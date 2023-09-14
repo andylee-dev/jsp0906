@@ -62,8 +62,8 @@ pageEncoding="UTF-8"%>
               거래처관리
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">거래처조회</a></li>
-              <li><a class="dropdown-item" href="#">거래처등록</a></li>
+              <li><a class="dropdown-item" href="customList.do">거래처조회</a></li>
+              <li><a class="dropdown-item" href="customInsertForm.do">거래처등록</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

@@ -6,6 +6,7 @@ public class Custom {
 	private String cust_tel;
 	private String cust_gubun;
 	private String cust_ceo;
+
 	public int getCust_code() {
 		return cust_code;
 	}

@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.rowset.serial.SerialException;
 
 import dao.ItemDao;
-import dao.SawonDao;
 import dto.Item;
-import dto.Sawon;
 
 public class ItemListAction implements CommandProcess {
 
