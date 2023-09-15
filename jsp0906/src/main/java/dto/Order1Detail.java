@@ -7,6 +7,10 @@ public class Order1Detail {
 	private String item_order_desc;
 	private String cancel;
 	private int item_count;
+	
+	//조회용
+	private String cust_name;
+	private String item_name;
 
 	public String getOrder_date() {
 		return order_date;
@@ -44,4 +48,17 @@ public class Order1Detail {
 	public void setItem_count(int item_count) {
 		this.item_count = item_count;
 	}
+	public String getCust_name() {
+		return cust_name;
+	}
+	public void setCust_name(String cust_name) {
+		this.cust_name = cust_name;
+	}
+	public String getItem_name() {
+		return item_name;
+	}
+	public void setItem_name(String item_name) {
+		this.item_name = item_name;
+	}
+	
 }

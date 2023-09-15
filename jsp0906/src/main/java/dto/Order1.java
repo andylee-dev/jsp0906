@@ -6,6 +6,10 @@ public class Order1 {
 	private String order_desc;
 	private int sabun;
 	private String order_status;
+	
+	//조회용
+	private String cust_name;
+	private String sawon_name;
 
 	public String getOrder_date() {
 		return order_date;
@@ -36,6 +40,18 @@ public class Order1 {
 	}
 	public void setOrder_status(String order_status) {
 		this.order_status = order_status;
+	}
+	public String getCust_name() {
+		return cust_name;
+	}
+	public void setCust_name(String cust_name) {
+		this.cust_name = cust_name;
+	}
+	public String getSawon_name() {
+		return sawon_name;
+	}
+	public void setSawon_name(String sawon_name) {
+		this.sawon_name = sawon_name;
 	}
 	
 }
