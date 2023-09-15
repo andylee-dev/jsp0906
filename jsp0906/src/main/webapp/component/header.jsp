@@ -77,8 +77,8 @@ pageEncoding="UTF-8"%>
               주문관리
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">주문조회</a></li>
-              <li><a class="dropdown-item" href="#">주문등록</a></li>
+              <li><a class="dropdown-item" href="orderList.do">주문조회</a></li>
+              <li><a class="dropdown-item" href="orderInsertForm.do">주문등록</a></li>
             </ul>
           </li>
         </ul>
