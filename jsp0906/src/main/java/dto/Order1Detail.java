@@ -6,6 +6,7 @@ public class Order1Detail {
 	private int item_code;
 	private String item_order_desc;
 	private String cancel;
+	private int item_count;
 
 	public String getOrder_date() {
 		return order_date;
@@ -36,5 +37,11 @@ public class Order1Detail {
 	}
 	public void setCancel(String cancel) {
 		this.cancel = cancel;
+	}
+	public int getItem_count() {
+		return item_count;
+	}
+	public void setItem_count(int item_count) {
+		this.item_count = item_count;
 	}
 }
