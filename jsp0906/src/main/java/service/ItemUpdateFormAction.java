@@ -9,23 +9,22 @@ import javax.sql.rowset.serial.SerialException;
 import dao.ItemDao;
 import dto.Item;
 
-
 public class ItemUpdateFormAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws SerialException, IOException {
-		System.out.println(getClass().getName()+"-requestPro Start");
+		System.out.println(getClass().getName() + "-requestPro Start");
 		try {
 			int item_code = Integer.parseInt(request.getParameter("item_code"));
 			ItemDao itemDao = ItemDao.getInstance();
 			Item item = itemDao.select(item_code);
 			request.setAttribute("item", item);
-		
+
 		} catch (Exception e) {
-			System.out.println("[ERROR]"+getClass().getName()+":"+e.getMessage());
-		} finally{
-			System.out.println(getClass().getName()+"-requestPro end");
+			System.out.println("[ERROR]" + getClass().getName() + ":" + e.getMessage());
+		} finally {
+			System.out.println(getClass().getName() + "-requestPro end");
 		}
 		return "itemUpdateForm.jsp";
 	}

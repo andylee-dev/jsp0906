@@ -24,7 +24,7 @@ pageEncoding="UTF-8"%>
       <div class="container">
         <div class="row justify-content-center">
           <div class="card col-md-4 col-lg-5 text-center">
-            <h2 class="card-title p-3">회원 등록</h2>
+            <h2 class="card-title p-3">주문 신규 등록</h2>
             <form action="sawonInsertPro.do" method="post">
               <div class="form-group p-2 justify-content-center">
                 <input type="hidden" name="sabun" value="${sawon.sabun}" />
