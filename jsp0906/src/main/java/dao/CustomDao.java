@@ -64,16 +64,23 @@ public class CustomDao {
 
 	public List<Custom> list(int startRow, int endRow) throws SQLException {
 		Connection conn = null;
-		String sql = "SELECT * FROM " + "(SELECT rownum rn, a.* FROM " + "(SELECT custom.* FROM custom ORDER BY cust_code) "
-				+ "a)WHERE rn BETWEEN ? AND ?";
+		String sql = "SELECT * FROM " 
+						+ "(SELECT rownum rn, a.* FROM " 
+							+ "(SELECT custom.* FROM custom ORDER BY cust_code) "
+						+ "a)WHERE rn BETWEEN ? AND ?";
+		String sqlAll = "SELECT * FROM custom";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<Custom> customList = null;
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, startRow);
-			pstmt.setInt(2, endRow);
+			if( endRow >=0 ) {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, startRow);
+				pstmt.setInt(2, endRow);
+			} else {
+				pstmt = conn.prepareStatement(sqlAll);
+			}
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				customList = new ArrayList<Custom>();

@@ -67,14 +67,19 @@ public class SawonDao {
 				+ "(SELECT rownum rn, a.* FROM "
 					+ "(SELECT sawon.* FROM sawon ORDER BY sabun) "
 				+ "a)WHERE rn BETWEEN ? AND ?";
+		String sqlAll = "SELECT * FROM sawon";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<Sawon> sawonList = null;
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1,startRow);
-			pstmt.setInt(2,endRow);			
+			if(endRow >= 0) {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1,startRow);
+				pstmt.setInt(2,endRow);
+			} else {
+				pstmt = conn.prepareStatement(sqlAll);
+			}
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				sawonList = new ArrayList<Sawon>();
@@ -96,6 +101,7 @@ public class SawonDao {
 		}
 		return sawonList;
 	}
+	
 	public int insert(Sawon sawon) throws SQLException {
 		int result = 0;
 		Connection conn = null;
