@@ -40,12 +40,12 @@ public class Controller extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// web.xml에서 propertyConfig에 해당하는 init-param의 값을 읽어온다.
 		String props = config.getInitParameter("config");
-		System.out.println("1. init String props=> "+ props);
+//		System.out.println("1. init String props=> "+ props);
 		Properties pr = new Properties();
 		FileInputStream f = null;
 		try {
 			String configFilePath = config.getServletContext().getRealPath(props);
-			System.out.println("2. init String configFilePath=> " + configFilePath);			
+//			System.out.println("2. init String configFilePath=> " + configFilePath);			
 			f = new FileInputStream(configFilePath);
 			
 			// Memory Up
@@ -64,8 +64,8 @@ public class Controller extends HttpServlet {
 		while(keyIter.hasNext()) {
 			String command = (String) keyIter.next();
 			String className = pr.getProperty(command);
-			System.out.println("3. init Command=>"+ command);
-			System.out.println("4. init className=>"+ className);
+//			System.out.println("3. init Command=>"+ command);
+//			System.out.println("4. init className=>"+ className);
 
 			try {
 				// 문자열 -> service.ListAction가 class로 변신
@@ -102,18 +102,21 @@ public class Controller extends HttpServlet {
 		String view = null;
 		CommandProcess com = null;
 		String command = request.getRequestURI();
-		System.out.println("1. requestServletPro command=> " +command);
+//		System.out.println("1. requestServletPro command=> " +command);
 		command = command.substring(request.getContextPath().length());
-		System.out.println("2. requestServletPro command substring=> " + command);
+//		System.out.println("2. requestServletPro command substring=> " + command);
 		
 		try {
 			// service.ListAction Instance
 			com = (CommandProcess) commandMap.get(command);
-			System.out.println("3.requestServletPro command =>" + command);
-			System.out.println("4.requestServletPro com =>" + com);
+//			System.out.println("3.requestServletPro command =>" + command);
+//			System.out.println("4.requestServletPro com =>" + com);
+			System.out.println("[__Controller__] command: " + command +", com: "+ com);
 			// com --> service.ListAction@32a22787
 			view = com.requestPro(request, response);
-			System.out.println("5.requestServletPro view=> " + view);
+//			System.out.println("5.requestServletPro view=> " + view);
+			System.out.println("[```Controller```] view: " + view +"\n");
+
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
