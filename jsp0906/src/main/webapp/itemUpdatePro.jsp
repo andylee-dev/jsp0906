@@ -29,7 +29,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <c:if test="${result == 0 }">
       <script type="text/javascript">
         alert("수정 안 됐어요 T.T");
-        location.href = "itemUpdateForm.do?item_code=${item_code}&pageNum=${pageNum}";
+        location.href =
+          "itemUpdateForm.do?item_code=${item_code}&pageNum=${pageNum}";
       </script>
     </c:if>
   </body>

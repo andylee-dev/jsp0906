@@ -16,7 +16,8 @@ uri="http://java.sun.com/jsp/jstl/core" %> <!DOCTYPE html>
     <c:if test="${result == 0 }">
       <script type="text/javascript">
         alert("삭제 안 됐어요 T.T");
-        location.href = "itemDeleteForm.do?item_code=${item_code}&pageNum=${pageNum}";
+        location.href =
+          "itemDeleteForm.do?item_code=${item_code}&pageNum=${pageNum}";
       </script>
     </c:if>
   </body>

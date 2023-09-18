@@ -61,7 +61,5 @@ pageEncoding="UTF-8"%>
       </div>
     </section>
     <%@ include file="component/footer.jsp" %>
-
-
   </body>
 </html>

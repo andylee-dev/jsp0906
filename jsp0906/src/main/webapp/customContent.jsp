@@ -20,7 +20,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <%@ include file="component/header.jsp" %>
-    <section id="customContent" class="p-5  m-5">
+    <section id="customContent" class="p-5 m-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="card col-md-4 col-lg-5 text-center">

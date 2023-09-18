@@ -27,7 +27,11 @@ pageEncoding="UTF-8"%>
             <h2 class="card-title p-3">제품 등록</h2>
             <form action="itemInsertPro.do" method="post">
               <div class="form-group p-2 justify-content-center">
-                <input type="hidden" name="item_code" value="${item.item_code}" />
+                <input
+                  type="hidden"
+                  name="item_code"
+                  value="${item.item_code}"
+                />
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span
@@ -70,10 +74,15 @@ pageEncoding="UTF-8"%>
                       >종류</span
                     >
                   </div>
-                  <select name="item_kind" class="form-select" aria-label="Default select example" required="required">
-					  <option value="0">0</option>
-					  <option value="1">1</option>
-					</select>
+                  <select
+                    name="item_kind"
+                    class="form-select"
+                    aria-label="Default select example"
+                    required="required"
+                  >
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                  </select>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -83,14 +92,14 @@ pageEncoding="UTF-8"%>
                       >설명</span
                     >
                   </div>
-                  <textarea 
-	                rows="" 
-	                cols=""
+                  <textarea
+                    rows=""
+                    cols=""
                     name="item_desc"
                     required="required"
                     class="form-control"
                     aria-label="Default"
-                    aria-describedby="inputGroup-sizing-default"                  
+                    aria-describedby="inputGroup-sizing-default"
                   >
                   </textarea>
                 </div>

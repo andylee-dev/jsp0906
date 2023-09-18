@@ -28,29 +28,29 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="card col-md-4 col-lg-5 text-center">
             <h2 class="card-title p-3">주문 상세내역</h2>
             <table class="table table-bordered table-hover align-middle">
-				<tr><td>주문일자</td><td>${order.order_date}</td></tr>
-				<tr><td>거래처</td><td>${order.cust_code} ${order.cust_name}</td></tr>
-				<tr><td>주문요청내역</td><td>${order.order_desc}</td></tr>
-				<tr><td>접수사원</td><td>${order.sabun} ${order.sawon_name}</td></tr>
-				<tr><td>접수상태</td><td>${order.order_status}</td></tr>
-				<tr>
-				  <td colspan="2">
-	                <div
-	                  class="btn-group"
-	                  role="group"
-	                  aria-label="Basic example"
-	                >			  
-				    <c:if test="${order.order_status=='0'}">
-					    <input type="button" value="주문제품추가" class="btn btn-primary"
-					            onclick="location.href='orderUpdateForm.do?order_date=${order.order_date}&cust_code=${order.cust_code}'">
-					    <input type="button" value="주문거래처삭제" class="btn btn-danger"
-					            onclick="location.href='orderDeleteForm.do?order_date=${order.order_date}&cust_code=${order.cust_code}'">
-				    </c:if>
-				    <input type="button" class="btn btn-success" value="주문거래처목록"
-						    onclick="location.href='orderList.do'">
-					</div>
-				  </td>
-				</tr>  
+              <tr><td>주문일자</td><td>${order.order_date}</td></tr>
+              <tr><td>거래처</td><td>${order.cust_code} ${order.cust_name}</td></tr>
+              <tr><td>주문요청내역</td><td>${order.order_desc}</td></tr>
+              <tr><td>접수사원</td><td>${order.sabun} ${order.sawon_name}</td></tr>
+              <tr><td>접수상태</td><td>${order.order_status}</td></tr>
+              <tr>
+                <td colspan="2">
+                        <div
+                          class="btn-group"
+                          role="group"
+                          aria-label="Basic example"
+                        >			  
+                  <c:if test="${order.order_status=='0'}">
+                    <input type="button" value="주문제품추가" class="btn btn-primary"
+                            onclick="location.href='orderUpdateForm.do?order_date=${order.order_date}&cust_code=${order.cust_code}'">
+                    <input type="button" value="주문거래처삭제" class="btn btn-danger"
+                            onclick="location.href='orderDeleteForm.do?order_date=${order.order_date}&cust_code=${order.cust_code}'">
+                  </c:if>
+                  <input type="button" class="btn btn-success" value="주문거래처목록"
+                      onclick="location.href='orderList.do'">
+                </div>
+                </td>
+              </tr>  
             </table>
           </div>
         </div>

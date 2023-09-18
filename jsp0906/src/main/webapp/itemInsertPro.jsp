@@ -17,7 +17,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <c:if test="${result == 0 }">
       <script type="text/javascript">
         alert("오류야 T.T");
-        location.href = "itemInsertForm.do?item_code=${item_code}&pageNum=${pageNum}";
+        location.href =
+          "itemInsertForm.do?item_code=${item_code}&pageNum=${pageNum}";
       </script>
     </c:if>
   </body>

@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" 
-pageEncoding="UTF-8"%><%@page import="dto.Sawon"%> <%@page import="java.util.List"%> <%@page
-import="dao.SawonDao"%>  <%@ taglib prefix="c"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%><%@page import="dto.Sawon"%> <%@page
+import="java.util.List"%> <%@page import="dao.SawonDao"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -43,7 +43,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <tr>
                         <td>${order.order_date}</td>
                         <td>
-                          <a href="orderContent.do?order_date=${order.order_date}&cust_code=${order.cust_code}">
+                          <a
+                            href="orderContent.do?order_date=${order.order_date}&cust_code=${order.cust_code}"
+                          >
                             ${order.cust_name}
                           </a>
                         </td>

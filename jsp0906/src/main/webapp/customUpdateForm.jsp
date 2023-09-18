@@ -27,7 +27,11 @@ pageEncoding="UTF-8"%>
             <h2 class="card-title p-3">고객 정보 수정</h2>
             <form action="customUpdatePro.do" method="post">
               <div class="form-group">
-                <input type="hidden" name=cust_code value="${custom.cust_code}" />
+                <input
+                  type="hidden"
+                  name="cust_code"
+                  value="${custom.cust_code}"
+                />
                 <table class="table table-bordered table-hover align-middle">
                   <tr>
                     <th>사번</th>

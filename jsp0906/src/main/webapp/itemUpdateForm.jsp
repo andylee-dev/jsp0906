@@ -27,7 +27,11 @@ pageEncoding="UTF-8"%>
             <h2 class="card-title p-3">제품 수정</h2>
             <form action="itemUpdatePro.do" method="post">
               <div class="form-group">
-                <input type="hidden" name=item_code value="${item.item_code}" />
+                <input
+                  type="hidden"
+                  name="item_code"
+                  value="${item.item_code}"
+                />
                 <table class="table table-bordered table-hover align-middle">
                   <tr>
                     <th>사번</th>
@@ -78,15 +82,18 @@ pageEncoding="UTF-8"%>
                   <tr>
                     <th>상세</th>
                     <td>
-                    	<textarea 	                    	
-                    		rows="" 
-	                    	cols="" 
-	                    	name="item_desc"                        
-	                    	class="form-control"
-	                        aria-label="Default"
-	                        aria-describedby="inputGroup-sizing-default"	                        
-	                        >${item.item_desc}</textarea>
-<%--                       <input
+                      <textarea
+                        rows=""
+                        cols=""
+                        name="item_desc"
+                        class="form-control"
+                        aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default"
+                      >
+${item.item_desc}</textarea
+                      >
+                      <%--
+                      <input
                         type=""
                         name="item_desc"
                         required="required"
@@ -94,7 +101,8 @@ pageEncoding="UTF-8"%>
                         aria-label="Default"
                         aria-describedby="inputGroup-sizing-default"
                         value="${item.item_desc}"
-                      /> --%>
+                      />
+                      --%>
                     </td>
                   </tr>
                   <tr>

@@ -29,12 +29,12 @@ pageEncoding="UTF-8"%>
           <div class="card col-md-4 col-lg-5 text-center">
             <h2 class="card-title p-3">주문 등록</h2>
             <form action="orderInsertPro.do" method="post">
-	    	  <input type="hidden" name="order_status" value="0">
+              <input type="hidden" name="order_status" value="0">
               <div class="form-group p-2 justify-content-center">
                 <table class="table table-bordered table-hover align-middle">
                   <tr>
                     <th>주문일자</th>
-					    <td><fmt:formatDate value="${today_ymd}" pattern="yyyyMMdd" /></td>
+                    <td><fmt:formatDate value="${today_ymd}" pattern="yyyyMMdd" /></td>
                   </tr>
                   <tr>
                     <th>거래처명</th>
@@ -45,9 +45,9 @@ pageEncoding="UTF-8"%>
 	                    required="required" 
 	                    aria-label="Default select example"
 	                  >
-                        <c:forEach var="custom" items="${customList}">
-					     	<option value="${custom.cust_code}">${custom.cust_name}</option>
-					    </c:forEach>
+                      <c:forEach var="custom" items="${customList}">
+                        <option value="${custom.cust_code}">${custom.cust_name}</option>
+                      </c:forEach>
 	                  </select>
                     </td>
                   </tr>
@@ -67,18 +67,18 @@ pageEncoding="UTF-8"%>
                   <tr>
                     <th>담당사원(접수사원)</th>
                     <td>
-	                  <select 
-	                  	class="form-select" 
-	                  	name="sabun"  
-	                  	required="required" 
-	                  	aria-label="Default select example">
-                       <c:forEach var="sawon" items="${sawonList}">
-					      <option value="${sawon.sabun}">${sawon.name}</option>
-					    </c:forEach>
-	                  </select>
+                      <select 
+                        class="form-select" 
+                        name="sabun"  
+                        required="required" 
+                        aria-label="Default select example">
+                        <c:forEach var="sawon" items="${sawonList}">
+                          <option value="${sawon.sabun}">${sawon.name}</option>
+                        </c:forEach>
+                      </select>
                     </td>
                   </tr>
-                  </table>
+                </table>
                 <input type="submit" value="확인" class="btn btn-primary" />
                 <input type="reset" value="다시작성" class="btn btn-danger" />
               </div>
