@@ -69,14 +69,19 @@ public class ItemDao {
 		Connection conn = null;
 		String sql = "SELECT * FROM " + "(SELECT rownum rn, a.* FROM " + "(SELECT item.* FROM item ORDER BY item_code) "
 				+ "a)WHERE rn BETWEEN ? AND ?";
+		String sqlAll = "SELECT * FROM item";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<Item> itemList = null;
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, startRow);
-			pstmt.setInt(2, endRow);
+			if( endRow >=0 ) {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, startRow);
+				pstmt.setInt(2, endRow);
+			} else {
+				pstmt = conn.prepareStatement(sqlAll);
+			}
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				itemList = new ArrayList<Item>();
