@@ -20,31 +20,24 @@ public class OrderInsertFormAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws SerialException, IOException {
-		System.out.println(getClass().getName()+"-requestPro Start");
+		System.out.println(getClass().getName() + "-requestPro Start");
 		try {
-			
-			/* Date to String */
-			Date date = new Date();
-			SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd"); // ("yyyy-MM-dd HH:mm:ss");
-			String order_date = format.format(date);
-			
-			/* Select Custom Name as a List*/
+			/* Select Custom Name as a List */
 			CustomDao cd = CustomDao.getInstance();
 			List<Custom> customList = cd.list(0, -1);
-			
-			
-			/* Select Sawon Name as a List*/
+
+			/* Select Sawon Name as a List */
 			SawonDao sd = SawonDao.getInstance();
 			List<Sawon> sawonList = sd.list(0, -1);
 
-			request.setAttribute("order_date", order_date);
+			/* Set Attribute */
 			request.setAttribute("customList", customList);
 			request.setAttribute("sawonList", sawonList);
-		
+
 		} catch (Exception e) {
-			System.out.println("[ERROR]"+getClass().getName()+":"+e.getMessage());
-		} finally{
-			System.out.println(getClass().getName()+"-requestPro end");
+			System.out.println("[ERROR]" + getClass().getName() + ":" + e.getMessage());
+		} finally {
+			System.out.println(getClass().getName() + "-requestPro end");
 		}
 		return "orderInsertForm.jsp";
 	}

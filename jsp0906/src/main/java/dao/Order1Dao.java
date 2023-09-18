@@ -93,8 +93,8 @@ public class Order1Dao {
 					order.setOrder_desc(rs.getString("order_desc"));
 					order.setSabun(rs.getInt("sabun"));
 					order.setOrder_status("order_status");
-					order.setCust_name("cust_name");
-					order.setSawon_name("sawon_name");
+					order.setCust_name(rs.getString("cust_name"));
+					order.setSawon_name(rs.getString("name"));
 					orderList.add(order);
 				} while (rs.next());
 			}
@@ -139,7 +139,11 @@ public class Order1Dao {
 
 	public Order1 select(String order_date, int cust_code) throws SQLException {
 		Connection conn = null;
-		String sql = "SELECT * FROM order1 WHERE order_date=?, cust_code=?";
+		String sql = "SELECT o.*, s.name, c.cust_name "
+				+ "FROM order1 o, sawon s, custom c "
+				+ "WHERE o.order_date=? AND o.cust_code=? "
+				+ "AND o.sabun=s.sabun "
+				+ "AND o.cust_code=c.cust_code";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Order1 order = null;
@@ -156,6 +160,8 @@ public class Order1Dao {
 				order.setOrder_desc(rs.getString("order_desc"));
 				order.setOrder_status(rs.getString("order_status"));
 				order.setSabun(rs.getInt("sabun"));
+				order.setSawon_name(rs.getString("name"));
+				order.setCust_name(rs.getString("cust_name"));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

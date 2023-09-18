@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,6 +21,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+  	<c:set var="today_ymd" value="<%=new java.util.Date()%>" />
     <%@ include file="component/header.jsp" %>
     <section id="orderInsert" class="p-5  m-5"">
       <div class="container">
@@ -27,25 +29,24 @@ pageEncoding="UTF-8"%>
           <div class="card col-md-4 col-lg-5 text-center">
             <h2 class="card-title p-3">주문 등록</h2>
             <form action="orderInsertPro.do" method="post">
+	    	  <input type="hidden" name="order_status" value="0">
               <div class="form-group p-2 justify-content-center">
-                <input type="hidden" name="order_date" value="${order_date}" />
                 <table class="table table-bordered table-hover align-middle">
                   <tr>
                     <th>주문일자</th>
-                    <td>${order_date}</td>
+					    <td><fmt:formatDate value="${today_ymd}" pattern="yyyyMMdd" /></td>
                   </tr>
                   <tr>
                     <th>거래처명</th>
                     <td>
 	                  <select 
 	                    class="form-select" 
-	                    name="custom"  
+	                    name="cust_code"  
 	                    required="required" 
 	                    aria-label="Default select example"
 	                  >
                         <c:forEach var="custom" items="${customList}">
-					     	<option 
-					     	  value='{"cust_name":${custom.cust_name},"cust_code":${custom.cust_code}}'>${custom.cust_name}</option>
+					     	<option value="${custom.cust_code}">${custom.cust_name}</option>
 					    </c:forEach>
 	                  </select>
                     </td>
@@ -68,12 +69,11 @@ pageEncoding="UTF-8"%>
                     <td>
 	                  <select 
 	                  	class="form-select" 
-	                  	name="sawon"  
+	                  	name="sabun"  
 	                  	required="required" 
 	                  	aria-label="Default select example">
                        <c:forEach var="sawon" items="${sawonList}">
-					      <option value='{"sawon_name":${sawon.name},"sabun":${sawon.sabun}}'
-					      >${sawon.name}</option>
+					      <option value="${sawon.sabun}">${sawon.name}</option>
 					    </c:forEach>
 	                  </select>
                     </td>

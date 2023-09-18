@@ -22,7 +22,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   </head>
   <body bgcolor="yellow">
     <%@ include file="component/header.jsp" %>
-    <section id="itemList" class="pb-md-5 pb-3 pt-3">
+    <section id="orderList" class="pb-md-5 pb-3 pt-3">
       <div class="container">
         <div class="row justify-content-center">
           <div class="card text-center">
@@ -43,12 +43,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       <tr>
                         <td>${order.order_date}</td>
                         <td>
-                          <a href="orderContent.do?cust_name=${order.cust_name}">
+                          <a href="orderContent.do?order_date=${order.order_date}&cust_code=${order.cust_code}">
                             ${order.cust_name}
                           </a>
                         </td>
                         <td>${order.order_desc}</td>
-                        <td>${order.sabun}</td>
+                        <td>${order.sawon_name}</td>
                       </tr>
                       <c:set var="startNum" value="${startNum - 1 }"></c:set>
                     </c:forEach>
